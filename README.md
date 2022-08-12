@@ -11,7 +11,7 @@ Instalación de selenium: https://selenium-python.readthedocs.io/installation.ht
 pip install selenium
 ```
 
-##Ya NO se hace: nstalación de Drivers de navegador (Chrome): https://sites.google.com/chromium.org/driver/ <br/>
+## Ya NO se hace: nstalación de Drivers de navegador (Chrome): https://sites.google.com/chromium.org/driver/ <br/>
 Validar la versión del driver con la versión del navegador
 ```
 chrome://version
