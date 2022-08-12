@@ -4,6 +4,11 @@
 Selenium <br/>
 Python 3.10
 
+## Descarga del repo
+``` 
+git clone https://github.com/agutierrezeye/pynet.git](https://github.com/agutierrezeye/selenium.git
+```
+
 ## Comandos 
 
 Instalación de selenium: https://selenium-python.readthedocs.io/installation.html
