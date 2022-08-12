@@ -9,14 +9,15 @@ Python 3.10
 git clone https://github.com/agutierrezeye/pynet.git](https://github.com/agutierrezeye/selenium.git
 ```
 
-## Comandos 
+## Instalación de selenium
 
-Instalación de selenium: https://selenium-python.readthedocs.io/installation.html
+https://selenium-python.readthedocs.io/installation.html
 ```
 pip install selenium
 ```
 
-## Ya NO se hace: Instalación de Drivers de navegador (Chrome): https://sites.google.com/chromium.org/driver/ <br/>
+## Ya NO se hace (Ya se incluye en el proyecto) Instalación de Drivers de navegador (Chrome)
+https://sites.google.com/chromium.org/driver/ <br/>
 Validar la versión del driver con la versión del navegador
 ```
 chrome://version
