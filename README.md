@@ -8,12 +8,14 @@ Python 3.10
 ``` 
 git clone https://github.com/agutierrezeye/seleniumyt.git
 ```
-
-## Instalación de selenium
-
-https://selenium-python.readthedocs.io/installation.html
+## Instalación de liberías necesarias de python
+Linux
 ```
-pip install selenium
+pip3 install -r requirements.txt
+```
+Windows
+```
+pip install -r requirements.txt
 ```
 
 ## Ya NO se hace (Ya se incluye en el proyecto) Instalación de Drivers de navegador (Chrome)
@@ -21,6 +23,13 @@ https://sites.google.com/chromium.org/driver/ <br/>
 Validar la versión del driver con la versión del navegador
 ```
 chrome://version
+```
+
+## Instalación de selenium
+
+https://selenium-python.readthedocs.io/installation.html
+```
+pip install selenium
 ```
 
 ![image](https://user-images.githubusercontent.com/109681476/184384402-ac4e78e2-6489-49ed-ac2f-c02c42c5fc18.png)
