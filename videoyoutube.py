@@ -5,7 +5,8 @@ from selenium.webdriver import ActionChains
 import time 
 import datetime
 import socket
-driver = webdriver.Chrome(executable_path='C:\webdrivers\chromedriver.exe')
+
+# driver = webdriver.Chrome(executable_path='C:\webdrivers\chromedriver.exe')
 
 myTime = str(time.strftime(("%d-%m-%Y %H:%M:%S")))
 
