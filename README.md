@@ -6,7 +6,7 @@ Python 3.10
 
 ## Descarga del repo
 ``` 
-git clone https://github.com/agutierrezeye/pynet.git](https://github.com/agutierrezeye/selenium.git
+git clone https://github.com/agutierrezeye/seleniumyt.git
 ```
 
 ## Instalación de selenium
