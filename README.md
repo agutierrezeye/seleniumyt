@@ -2,7 +2,8 @@
 
 ## Requerimientos
 Selenium <br/>
-Python 3.10
+Python 3.10: https://www.python.org/downloads/ <br/>
+Git: https://git-scm.com/download/win  <br/> 
 
 ## Descarga del repo
 ``` 
