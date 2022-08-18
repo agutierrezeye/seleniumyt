@@ -20,7 +20,7 @@ def create_web_driver():
 
 
 driver = create_web_driver()
-driver.get("https://www.youtube.com/watch?v=jfKfPfyJRdk%22")
+driver.get("https://www.youtube.com/watch?v=_-WWwNt8AzU")
 
 
 time.sleep(3)
