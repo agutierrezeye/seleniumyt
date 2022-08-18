@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
+import speedtest
 
 import time 
 import datetime
@@ -52,6 +53,15 @@ while True:
     #pr = f"Speed:\t\t\t{spd}\nNetwork Activity:\t{nac}\nBuffer:\t\t\t{bff}\nLive Latency:\t\t{lila}\n"
     #print(pr)
     #print(f"{UP}Speed:\t\t\t{spd}{CLEAR}\n{UP}Network Activity:\t{nac}{CLEAR}\n{UP}Buffer:\t\t\t{bff}{CLEAR}\n{UP}Live Latency:\t\t{lila}{CLEAR}\n")
-    file.write(myTime+" "+socket.gethostbyname(socket.gethostname())+" "+res+" "+spd+" "+nac+" "+bff +" "+lila +"\n")
+    
+    st = speedtest.Speedtest() 
+    download_speed = st.download()
+    upload_speed = st.upload()
+    
+    # print('Download Speed: {:5.2f} Mb'.format(download_speed/(1024*1024)))
+    # # print('Upload Speed: {:5.2f} Mb'.format(upload_speed/(1024*1024)))
+    
+    file.write(myTime+" "+socket.gethostbyname(socket.gethostname())+" "+res+" "+spd+" "+nac+" "+bff +" "+lila +' {:5.2f} '.format(download_speed/(1024*1024))+'{:5.2f}' .format(upload_speed/(1024*1024)))
+    
     file.close()
     time.sleep(1)
