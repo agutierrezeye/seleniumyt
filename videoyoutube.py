@@ -56,15 +56,15 @@ while True:
     #print(pr)
     #print(f"{UP}Speed:\t\t\t{spd}{CLEAR}\n{UP}Network Activity:\t{nac}{CLEAR}\n{UP}Buffer:\t\t\t{bff}{CLEAR}\n{UP}Live Latency:\t\t{lila}{CLEAR}\n")
     
-    st = speedtest.Speedtest() 
-    download_speed = st.download()
-    upload_speed = st.upload()
+    # st = speedtest.Speedtest() 
+    # download_speed = st.download()
+    # upload_speed = st.upload()
     
     
     # print('Download Speed: {:5.2f} Mb'.format(download_speed/(1024*1024)))
     # # print('Upload Speed: {:5.2f} Mb'.format(upload_speed/(1024*1024)))
     
-    fileLog.write(myTime+" "+socket.gethostbyname(socket.gethostname())+" "+res+" "+spd+" "+nac+" "+bff +" "+lila +' {:5.2f} '.format(download_speed/(1024*1024))+'{:5.2f}' .format(upload_speed/(1024*1024))+"\n")
+    fileLog.write(myTime+" "+socket.gethostbyname(socket.gethostname())+" "+res+" "+spd+" "+nac+" "+bff +" "+lila+"\n")
     fileLog.close()
 
     arrayJSON = [
@@ -74,11 +74,10 @@ while True:
         {'Speed':spd},
         {'Network Activity':nac},
         {'}Buffer':bff},
-        {'Latency':lila},
-        {'Download SpeedTest':' {:5.2f} '.format(download_speed/(1024*1024))},
-        {'}Upload SpeedTest':'{:5.2f}' .format(upload_speed/(1024*1024))}]
+        {'Latency':lila}
+    ]
     
     jsonString = json.dumps(arrayJSON)
     fileJSON.write('{"prtg": { "result": '+jsonString+"}}\n")
 
-    time.sleep(1)
+    time.sleep(30)
