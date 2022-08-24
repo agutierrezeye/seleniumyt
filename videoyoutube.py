@@ -106,4 +106,4 @@ while True:
     # fileJSON = open('log.json', 'w')
     fileJSONData.write('{"prtg": { "result": '+jsonString+"}}\n")
 
-    time.sleep(1)
+    time.sleep(20)
