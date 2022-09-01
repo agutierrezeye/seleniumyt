@@ -1,6 +1,7 @@
 import json
 import socket
 import time
+import re
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains
@@ -58,12 +59,13 @@ while True:
     print(f"Host:\t\t\t{socket.gethostbyname(socket.gethostname())}\n")
     listStats = driver.find_elements(By.XPATH, "//div[@class='html5-video-info-panel']/div/div[not(@style='display: none;')]/span")
     resolution = listStats[2].text
+    resolutionModified = re.findall(r'[0-9]+@', resolution)[0]
     speed = listStats[5].find_element(By.XPATH, "./span[2]").text
     network = listStats[6].find_element(By.XPATH, "./span[2]").text
     buffer = listStats[7].find_element(By.XPATH, "./span[2]").text
     latency = listStats[8].find_element(By.XPATH, "./span[2]").text
     date = listStats[11].text
-    print(f"Resolution:\t\t{resolution}\nSpeed:\t\t\t{speed}\nNetwork Activity:\t{network}\nBuffer:\t\t\t{buffer}\nLive Latency:\t\t{latency}\nFecha:\t\t\t{date}\n")
+    print(f"Resolution:\t\t{resolution}\nResolutionModified:\t{resolutionModified}\nSpeed:\t\t\t{speed}\nNetwork Activity:\t{network}\nBuffer:\t\t\t{buffer}\nLive Latency:\t\t{latency}\nFecha:\t\t\t{date}\n")
 
     #pr = f"Speed:\t\t\t{speed}\nNetwork Activity:\t{network}\nBuffer:\t\t\t{buffer}\nLive Latency:\t\t{latency}\n"
     #print(pr)
@@ -76,13 +78,13 @@ while True:
     # print('Download Speed: {:5.2f} Mb'.format(download_speed/(1024*1024)))
     # print('Upload Speed: {:5.2f} Mb'.format(upload_speed/(1024*1024)))
 
-    fileLog.write(myTime+" "+socket.gethostbyname(socket.gethostname())+" "+resolution+" "+speed+" "+network+" "+buffer +" "+latency +' {:5.2f} '.format(0/(1024*1024))+'{:5.2f}' .format(0/(1024*1024))+"\n")
+    fileLog.write(myTime+" "+socket.gethostbyname(socket.gethostname())+" "+resolution+" "+speed+" "+network+" "+buffer +" "+latency +' {:5.2f} '.format(0/(1024*1024))+'{:5.2f}' .format(0/(1024*1024))+" "+resolutionModified+"\n")
     fileLog.close()
 
     arrayJSON = [
         {'Fecha':myTime,
         'Host':socket.gethostbyname(socket.gethostname()),
-        'Resolution':resolution,
+        'Resolution':resolutionModified,
         'Speed':speed,
         'Network Activity':network,
         'Buffer':buffer,
@@ -91,7 +93,6 @@ while True:
         'Upload SpeedTest':'{:5.2f}' .format(0/(1024*1024))}
     ]
 
-    
     # fileJSONSize = len(fileJSONData.read())
     # fileJSONData = open('log.json', "r")
 
@@ -106,4 +107,4 @@ while True:
     # fileJSON = open('log.json', 'w')
     fileJSONData.write('{"prtg": { "result": '+jsonString+"}}\n")
 
-    time.sleep(20)
+    time.sleep(30)
